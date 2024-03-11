@@ -75,7 +75,7 @@ async function copyContent() {
   try {
     await navigator.clipboard.writeText(passwordDisplay.value);
     copyMsg.innerText = "copied";
-  } catch {
+  } catch (e) {
     copyMsg.innerText = "failed";
   }
 
@@ -83,5 +83,7 @@ async function copyContent() {
 
   setTimeout(() => {
     copyMsg.classList.remove("active");
-  });
+  }, 2000);
 }
+
+
